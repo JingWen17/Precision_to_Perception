@@ -68,4 +68,4 @@ Total number of participants and distribution of gender.
 | Extremely energised *(6 or more articles)*          | 5                |
 
 *An example of the task instance page for the preliminary experiment:
-!(Survey_instance_config/instance.jpg)
+![Survey Screenshot](Survey_instance_config/instance.jpg)
