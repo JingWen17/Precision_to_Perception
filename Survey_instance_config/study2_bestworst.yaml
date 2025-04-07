@@ -1,0 +1,208 @@
+{
+    "port": 80,
+    "server_name": "potato annotator",
+    "annotation_task_name": "keyword main_study",
+    "output_annotation_dir": "annotation_output/pilot/",
+    "output_annotation_format": "csv",
+    "annotation_codebook_url": "",
+    "data_files": [
+        "data_files/all.csv"
+    ],
+    "item_properties": {
+        "id_key": "id",
+        "text_key": "text",
+
+    },
+    "list_as_text": {
+        "text_list_prefix_type": "None",
+        "horizontal": true
+    },
+    "user_config": {
+        "allow_all_users": True,
+        "users": []
+    },
+    "login": {
+        "type": "url_direct",
+        "url_argument": "PROLIFIC_PID"
+    },
+    "jumping_to_id_disabled": True,
+    "hide_navbar": True,
+    "surveyflow": {
+        "on": True,
+        "order": [
+            "pre_annotation",
+            "post_annotation"
+        ],
+        "pre_annotation": [
+            "surveyflow/INTRODUCTION.jsonl",
+            "surveyflow/CONSENT.jsonl",
+            "surveyflow/DEMOGRAPHY.jsonl",
+        ],
+        "post_annotation": [
+            "surveyflow/EXPERIENCE.jsonl",
+            "surveyflow/END.jsonl"
+        ],
+    },
+    "automatic_assignment": {
+        "on": True,
+        "output_filename": "task_assignment.json",
+        "sampling_strategy": "random",
+        "labels_per_instance": 500,
+        "instance_per_annotator": 3,
+        "test_question_per_annotator": 0,
+        "users": []
+    },
+    "alert_time_each_instance": 10000000000000000000000,
+#    "horizontal_key_bindings": True,
+    "annotation_schemes": [
+        {
+            "annotation_type": "radio",
+            "name": "Comprehensiveness_best",
+            "description": "1. Which group of keywords <span style='color: pink !important; font-weight: bold;'>best covers</span> the main article?",
+
+          # If true, display the labels horizontally
+            "horizontal": True,
+
+            "labels": [
+                "Keywords A", "Keywords B", "Keywords C", "Keywords D",
+            ],
+            "sequential_key_binding": True,
+            "label_requirement": {
+              "required": true
+            }
+        },
+
+        {
+            "annotation_type": "radio",
+            "name": "Comprehensiveness_worst",
+            "description": "2. Which group of keywords <span style='color: pink !important; font-weight: bold;'>least covers</span> the main article?",
+
+          # If true, display the labels horizontally
+            "horizontal": True,
+
+            "labels": [
+                "Keywords A", "Keywords B", "Keywords C", "Keywords D",
+            ],
+            "sequential_key_binding": True,
+            "label_requirement": {
+              "required": true
+            }
+        },
+
+        {
+            "annotation_type": "radio",
+            "name": "Distinctiveness_best",
+            "description": "3. Which group of keywords is the <span style='color: pink !important; font-weight: bold;'>most unique</span> in relation to the original article?",
+
+          # If true, display the labels horizontally
+            "horizontal": True,
+
+            "labels": [
+                "Keywords A", "Keywords B", "Keywords C", "Keywords D",
+            ],
+            "sequential_key_binding": True,
+            "label_requirement": {
+              "required": true
+            }
+        },
+
+        {
+            "annotation_type": "radio",
+            "name": "Distinctiveness_worst",
+            "description": "4. Which group of keywords is the <span style='color: pink !important; font-weight: bold;'>least unique</span> in relation to the original article?",
+
+          # If true, display the labels horizontally
+            "horizontal": True,
+
+            "labels": [
+                "Keywords A", "Keywords B", "Keywords C", "Keywords D",
+            ],
+            "sequential_key_binding": True,
+            "label_requirement": {
+              "required": true
+            }
+        },
+
+        {
+            "annotation_type": "radio",
+            "name": "Representativity_best",
+            "description": "5. Which group of keywords <span style='color: pink !important; font-weight: bold;'>best represents</span> the original article?",
+
+          # If true, display the labels horizontally
+            "horizontal": True,
+
+            "labels": [
+                "Keywords A", "Keywords B", "Keywords C", "Keywords D",
+            ],
+            "sequential_key_binding": True,
+            "label_requirement": {
+              "required": true
+            }
+        },
+
+        {
+            "annotation_type": "radio",
+            "name": "Representativity_worst",
+            "description": "6. Which group of keywords <span style='color: pink !important; font-weight: bold;'>least represents</span> the original article?",
+
+          # If true, display the labels horizontally
+            "horizontal": True,
+
+            "labels": [
+                "Keywords A", "Keywords B", "Keywords C", "Keywords D",
+            ],
+            "sequential_key_binding": True,
+            "label_requirement": {
+              "required": true
+            }
+        },
+
+        {
+            "annotation_type": "radio",
+            "name": "Reasonableness_best",
+            "description": "7. Which group of keywords is the <span style='color: pink !important; font-weight: bold;'>most reasonable</span> in the context of the article?",
+
+          # If true, display the labels horizontally
+            "horizontal": True,
+
+            "labels": [
+                "Keywords A", "Keywords B", "Keywords C", "Keywords D",
+            ],
+            "sequential_key_binding": True,
+            "label_requirement": {
+              "required": true
+            }
+        },
+
+        {
+            "annotation_type": "radio",
+            "name": "Reasonableness_worst",
+            "description": "8. Which group of keywords is the <span style='color: pink !important; font-weight: bold;'>least reasonable</span> in the context of the article?",
+
+          # If true, display the labels horizontally
+            "horizontal": True,
+
+            "labels": [
+                "Keywords A", "Keywords B", "Keywords C", "Keywords D",
+            ],
+            "sequential_key_binding": True,
+            "label_requirement": {
+              "required": true
+            }
+        },
+
+        {
+            "annotation_type": "text",
+            "name": "OverallQuality",
+            "description": "9. Considering the <span style='color: pink !important; font-weight: bold;'>overall quality of each group</span>, how would you rank these four groups of keywords? Please provide your ratings from <span style='color: pink !important; font-weight: bold;'>highest to lowest</span>. (example: ABCD. This ranking represents that you believe group A has the best overall quality among the four, while group D has the lowest overall quality.)",
+            "allow_paste": False,
+            "label_requirement": {
+              "required": true
+            }
+        },
+    ],
+    "html_layout": "templates/layout.html",
+    "base_html_template": "default",
+    "header_file": "default",
+    "site_dir": "default"
+}

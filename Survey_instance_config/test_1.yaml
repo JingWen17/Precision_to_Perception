@@ -1,0 +1,173 @@
+{
+    "port": 80,
+    "server_name": "potato annotator",
+    "annotation_task_name": "keyword main_study",
+    "output_annotation_dir": "annotation_output/pilot/",
+    "output_annotation_format": "csv",
+    "annotation_codebook_url": "",
+    "data_files": [
+        "data_files/goldenkeywords_An.csv"
+    ],
+    "item_properties": {
+        "id_key": "id",
+        "text_key": "text",
+
+    },
+    "list_as_text": {
+        "text_list_prefix_type": "None",
+        "horizontal": true
+    },
+    "user_config": {
+        "allow_all_users": True,
+        "users": []
+    },
+    "login": {
+        "type": "url_direct",
+        "url_argument": "PROLIFIC_PID"
+    },
+    "jumping_to_id_disabled": True,
+    "hide_navbar": True,
+    "surveyflow": {
+        "on": True,
+        "order": [
+            "pre_annotation",
+            "post_annotation"
+        ],
+        "pre_annotation": [
+            "surveyflow/INTRODUCTION.jsonl",
+            "surveyflow/CONSENT.jsonl",
+            "surveyflow/DEMOGRAPHY.jsonl",
+        ],
+        "post_annotation": [
+            "surveyflow/EXPERIENCE.jsonl",
+            "surveyflow/END.jsonl"
+        ],
+    },
+    "automatic_assignment": {
+        "on": True,
+        "output_filename": "task_assignment.json",
+        "sampling_strategy": "random",
+        "labels_per_instance": 5,
+        "instance_per_annotator": 1,
+        "test_question_per_annotator": 0,
+        "users": []
+    },
+    "alert_time_each_instance": 10000000000000000000000,
+#    "horizontal_key_bindings": True,
+    "annotation_schemes": [
+      {
+        "annotation_type": "likert",
+        "name": "Comprehensiveness",
+        "description": "1. How well do the keywords cover the main article?",
+        # The min and max labels are text shown at each end of the scale
+        "min_label": "Not at all",
+        "max_label": "Fully encompassing",
+
+        # How many scale points to show
+        "size": 7,
+
+        # If true, numbers [1-len(labels)] will be bound to each
+        # label. Highlight selection annotations with more than 10 are not supported
+        # with this simple keybinding and will need to use the full item
+        # specification to bind all labels to keys.
+        "sequential_key_binding": False,
+        "horizontal": False,
+        "displaying_score": true,
+        "label_requirement": {
+          "required": true
+        }
+      },
+      {
+        "annotation_type": "likert",
+        "name": "Distinctiveness",
+        "description": "2. How unique do you find these keywords in relation to the original article?",
+      # The min and max labels are text shown at each end of the scale
+        "min_label": "Not Unique",
+        "max_label": "Highly Unique",
+
+      # How many scale points to show
+        "size": 7,
+
+      # If true, numbers [1-len(labels)] will be bound to each
+      # label. Highlight selection annotations with more than 10 are not supported
+      # with this simple keybinding and will need to use the full item
+      # specification to bind all labels to keys.
+        "sequential_key_binding": False,
+        "horizontal": False,
+        "displaying_score": true,
+        "label_requirement": {
+            "required": true
+        }
+      },
+      {
+        "annotation_type": "likert",
+        "name": "Representativity",
+        "description": "3. To what degree do you think these keywords represent the original article?",
+      # The min and max labels are text shown at each end of the scale
+        "min_label": "Not Representative",
+        "max_label": "Highly Representative",
+
+      # How many scale points to show
+        "size": 7,
+
+      # If true, numbers [1-len(labels)] will be bound to each
+      # label. Highlight selection annotations with more than 10 are not supported
+      # with this simple keybinding and will need to use the full item
+      # specification to bind all labels to keys.
+        "sequential_key_binding": False,
+        "horizontal": False,
+        "displaying_score": true,
+        "label_requirement": {
+            "required": true
+        }
+      },
+      {
+        "annotation_type": "likert",
+        "name": "Reasonableness",
+        "description": "4. In your opinion, does the selection of these keywords seem reasonable in the context of the article?",
+      # The min and max labels are text shown at each end of the scale
+        "min_label": "Unreasonable",
+        "max_label": "Highly Reasonable",
+
+      # How many scale points to show
+        "size": 7,
+
+      # If true, numbers [1-len(labels)] will be bound to each
+      # label. Highlight selection annotations with more than 10 are not supported
+      # with this simple keybinding and will need to use the full item
+      # specification to bind all labels to keys.
+        "sequential_key_binding": False,
+        "horizontal": False,
+        "displaying_score": true,
+        "label_requirement": {
+            "required": true
+        }
+      },
+      {
+        "annotation_type": "likert",
+        "name": "Overall Quality",
+        "description": "5. How would you evaluate the overall quality of these automatically generated keywords?",
+      # The min and max labels are text shown at each end of the scale
+        "min_label": "Strongly Disagree",
+        "max_label": "Strongly Agree",
+
+      # How many scale points to show
+        "size": 7,
+
+      # If true, numbers [1-len(labels)] will be bound to each
+      # label. Highlight selection annotations with more than 10 are not supported
+      # with this simple keybinding and will need to use the full item
+      # specification to bind all labels to keys.
+        "sequential_key_binding": False,
+        "horizontal": False,
+        "displaying_score": true,
+        "label_requirement": {
+            "required": true
+        }
+      },
+    ],
+    "html_layout": "templates/layout.html",
+    "base_html_template": "default",
+    "header_file": "default",
+    "site_dir": "default"
+}
